@@ -28,7 +28,7 @@ async function getJokes() {
             break;
         }
 
-        resultsContainer.innerHTML += `<a href="details.html?id=${results.id}" class="jokeresult"> ${results[i].joke} </a>`;
+        resultsContainer.innerHTML += `<a href="details.html?id=${results[i].id}" class="jokeresult"> ${results[i].joke} </a>`;
     }
     }
 

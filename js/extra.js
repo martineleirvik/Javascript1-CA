@@ -1,3 +1,5 @@
+// new index
+
 const url = "http://api.icndb.com/jokes";
 const proxy = "https://noroffcors.herokuapp.com/";
 
