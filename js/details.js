@@ -1,32 +1,40 @@
-const detailContainer = document.querySelector(".joke-detail");
+const resultsContainer = document.querySelector(".joke-detail");
 
-const url = "http://api.icndb.com/jokes";
+const queryString = document.location.search;
+
+const params = new URLSearchParams(queryString);
+
+const id = params.get("id");
+
+console.log(id);
+
+const singleurl = "http://api.icndb.com/jokes/" + id;
 const proxy = "https://noroffcors.herokuapp.com/";
 
-const corsFix = proxy + url;
+const corsFixSingle = proxy + singleurl;
 
-async function fetchJoke() {
 
-    try {
 
-        const response = await fetch(corsFix);
-        const content = await response.json();
+async function oneJoke() {
 
-        console.log(content);
+try {
 
-        createHtml(content);
-    
-    }
+    const response = await fetch(corsFixSingle);
+    const content = await response.json();
 
-    catch (error) {
-        console.log(error);
-        detailContainer.innerHTML = displayError("An error occured")
-    }
+    console.log(content);
+
+    const results = content.value;
+
+    resultsContainer.innerHTML = "";
+
+    resultsContainer.innerHTML += `<div class="jokeresult"> ${results.joke} </div>`;
 }
 
-fetchJoke();
-
-function createHtml(content) {
-    detailContainer.innerHTML = `<h1> ${Joke} </h1>
-                                <div class="detailjoke" ${results[i].joke} </div>`;
+catch (error) {
+    console.log(error);
+    resultsContainer.innerHTML = displayError("An error occured")
 }
+}
+
+oneJoke();

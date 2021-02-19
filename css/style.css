@@ -11,24 +11,31 @@ header {
     margin-top: 20px;
 }
 
-a {
+.navigation {
     text-decoration: none;
     color: #000;
     background-color: rgb(92, 94, 94);
-    border-radius: 1rem;
+    border-radius: 0.3rem;
     padding: 0.8rem;
     color: #fff;
     padding: 15px 30px;
     margin-left: 20px;
 }
 
-.result {
-    margin: 1rem;
+#back {
+    color:#000;
+}
+
+.jokeresult {
     padding: 1rem;
-    max-width: 200px;
+    max-width: 230px;
     background: #fff;
     border: 1px solid rgb(71, 68, 68);
     border-radius: 1rem;
+    margin: 2rem auto;
+    display: block;
+    text-decoration: none;
+    color: #000;
 }
 
 .error {
@@ -37,10 +44,11 @@ a {
     color: #a50a0a;
     background:rgb(241, 187, 187);
     text-align: center;
-
+    margin: 0 15rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
-
-
 
 form {
     background-color: white;
@@ -85,7 +93,7 @@ fieldset {
     margin: 1rem 15rem;
     padding: 1rem;
     color: rgb(37, 150, 14);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     border-radius: 20px;
@@ -99,7 +107,9 @@ fieldset {
     width: 100px;
     height: 100px;
     animation: spin 2s linear infinite;
-    margin-left: 100px;
+    position: fixed;
+    left: 50%;
+    margin-left: -50px;
 }
 
 @keyframes spin {

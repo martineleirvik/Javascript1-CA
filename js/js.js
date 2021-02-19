@@ -1,37 +1,22 @@
-const url = "http://api.icndb.com/jokes";
+const singleurl = "http://api.icndb.com/jokes/70";
 const proxy = "https://noroffcors.herokuapp.com/";
 
-const corsFix = proxy + url;
+const corsFixSingle = proxy + singleurl;
+
+const resultsContainer = document.querySelector(".joke-detail");
 
 
+async function oneJoke() {
+    const response = await fetch(corsFixSingle);
+    const content = await response.json();
 
-const queryString = document.location.search;
+    console.log(content);
 
-const params = new URLSearchParams(queryString);
+    const results = content.value;
 
-const id = params.get("id");
+    resultsContainer.innerHTML = "";
 
-if (id === null) {
-    location.href = "/";
+    resultsContainer.innerHTML += `<div class="jokeresult"> ${results.joke} </div>`;
 }
 
-const corsFix = "http://api.icndb.com/jokes" + id;
-
-const idContainer = document.querySelector(".id");
-const detailContainer = document.querySelector(".details");
-
-idContainer.innerHTML = id;
-
-async function fetchCaracter() {
-
-    try {
-
-        const response = await fetch(corsFix);
-        const details = await response.json();
-
-        console.log(details);
-
-        
-    }
-}
-
+oneJoke();

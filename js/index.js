@@ -1,10 +1,7 @@
 const url = "http://api.icndb.com/jokes";
 const proxy = "https://noroffcors.herokuapp.com/";
-const singleurl = "http://api.icndb.com/jokes/70";
 
 const corsFix = proxy + url;
-const corsFixSingle = proxy + singleurl;
-
 
 const resultsContainer = document.querySelector(".Thejoke");
 
@@ -31,7 +28,7 @@ async function getJokes() {
             break;
         }
 
-        resultsContainer.innerHTML += `<div class="result"> ${results[i].joke} </div>`;
+        resultsContainer.innerHTML += `<a href="details.html?id=${results.id}" class="jokeresult"> ${results[i].joke} </a>`;
     }
     }
 
@@ -39,21 +36,7 @@ async function getJokes() {
         console.log(error);
         resultsContainer.innerHTML = displayError("An error occured")
     }
-
 }
 
-
-async function oneJoke() {
-    const response = await fetch(corsFixSingle);
-    const content = await response.json();
-
-    console.log(content);
-
-    const results = content.value;
-
-    resultsContainer.innerHTML += `<div class="result"> ${results[i].joke} </div>`;
-}
-
-oneJoke();
 
 getJokes();
