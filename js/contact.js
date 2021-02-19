@@ -13,9 +13,8 @@ const subject = document.querySelector("#subject");
 const subjectError = document.querySelector("#subjecterror");
 
 
-function validateForm() {
 
-    event.preventDefault();
+function validateForm() {
 
     if (checkLength(name.value, 0) === true) {
         nameError.style.display = "none";
@@ -41,7 +40,6 @@ function validateForm() {
         subjectError.style.display = "block";
     }
 
-    console.log(event);
 }
 
 form.addEventListener("submit", validateForm)
@@ -81,3 +79,13 @@ form.onsubmit = function() {
 };
 
 
+
+
+const message = document.querySelector("#message");
+
+function submitForm(event) {
+    message.innerHTML = `<div class="submitted"> Your message has been sent successfully</div>`;
+    form.reset();
+}
+
+form.addEventListener ("submit", submitForm);

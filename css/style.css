@@ -37,15 +37,20 @@ form {
 input {
     display: block;
     width: 100%;
+    margin: 4px 0;
 }
 
 input[type=submit] {
     padding: 10px 20px;
-    background-color: rgb(111, 111, 111);
+    background-color: rgb(103, 124, 97);
     margin-top: 10px;
     border-radius: 12px;
     width: 120px;
     cursor: pointer;
+    border: 1px solid #636262;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 fieldset {
@@ -58,6 +63,18 @@ fieldset {
     font-size: 0.9rem;
     margin-top: 2px;
     padding-bottom: 0.5rem;
+}
+
+.submitted {
+    background: rgb(224, 230, 214);
+    margin: 1rem 15rem;
+    padding: 1rem;
+    color: rgb(37, 150, 14);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 20px;
+    border: solid 0.15rem;
 }
 
 .loader {
