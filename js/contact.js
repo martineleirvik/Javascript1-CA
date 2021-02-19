@@ -60,3 +60,24 @@ function validateEmail(email) {
     return patternMatches;
 }
 
+
+form.onsubmit = function() {
+
+    event.preventDefault();
+
+    console.log(event);
+
+    const name = document.querySelector("#name");
+    console.log(name.value);
+
+    const email = document.querySelector("#email");
+    console.log(email.value);
+
+    const address = document.querySelector("#address");
+    console.log(address.value);
+
+    const subject = document.querySelector("#subject");
+    console.log(subject.value);
+};
+
+
