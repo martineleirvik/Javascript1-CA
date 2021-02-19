@@ -1,0 +1,45 @@
+h1 {
+    text-align: center;
+}
+
+body {
+    background-color: rgb(219, 219, 219);
+    font-family: "Open Sans", sans-serif;
+}
+
+.result {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 200px;
+    background: #fff;
+    border: 1px solid rgb(71, 68, 68);
+    border-radius: 1rem;
+}
+
+.error {
+    border: 1px solid #a50a0a; 
+    padding: 1rem;
+    color: #a50a0a;
+    background:rgb(241, 187, 187);
+    text-align: center;
+
+}
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 16px solid #000000;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    margin-left: 100px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
