@@ -7,12 +7,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <h1>Contact</h1>
     <div class="container2">
+    
+        <div class="loader"></div>
         
-        <div class="results2">
-            <div class="loader"></div>
-        </div>
+        <form id="contactform" action="form-success.php" method="POST">
+            <fieldset>
+
+                <label for="name">Name (required)</label>
+                <input type="text" name="name" id="name" class="form">
+                <div class="form-error" id="nameerror">Please enter your name</div>
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form">
+                <div class="form-error" id="emailerror">Please enter a valid email address</div>
+
+                <label for="address">Address (minimum 25 characters)</label>
+                <input type="address" name="address" id="address" class="form">
+                <div class="form-error" id="addresserror">Must be at least 25 characters</div>
+
+                <label for="text">Subject (minimum 10 characters)</label>
+                <input type="text" name="text" id="subject" class="form">
+                <div class="form-error" id="subjecterror">Must be at least 10 characters</div>
+
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+
     </div>
-    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
